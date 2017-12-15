@@ -39,8 +39,8 @@ enum der_shift_for_key {
   HK_X,
   HK_Y,
   HK_Z,
-  HK_RSPACE,
-  HK_LSPACE,
+  HK_RSFT,
+  HK_LSFT,
   HK_AT,
   HK_SCOLON,          /* ; (and +) */
   HK_COLON,          /* ; (and *) */
@@ -67,230 +67,164 @@ typedef struct {
 
 /* Define keycode and sequence when some key shifted */
 const der_hk_key_shifter_t PROGMEM der_hk_key_shifters[] = {
+
+/* qwertyuiop@ */  
   /* HK_Q */
-  {.shift_id = HK_Q, .keycode = KC_HK_LSPACE, .key_sequence = {KC_P, KC_E}},
-  {.shift_id = HK_Q, .keycode = KC_HK_RSPACE, .key_sequence = {KC_P, KC_A}},
+  {.shift_id = HK_Q, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_A}},
   {.shift_id = HK_Q, .keycode = KC_NO, .key_sequence = {KC_DOT}},
 
   /* HK_W */
-  {.shift_id = HK_W, .keycode = KC_HK_LSPACE, .key_sequence = {KC_K, KC_E}},
-  {.shift_id = HK_W, .keycode = KC_HK_RSPACE, .key_sequence = {KC_G, KC_E}},
-  {.shift_id = HK_W, .keycode = KC_NO, .key_sequence = {KC_N, KC_A}},
+  {.shift_id = HK_W, .keycode = KC_HK_LSFT, .key_sequence = {KC_E}},
+  {.shift_id = HK_W, .keycode = KC_HK_RSFT, .key_sequence = {KC_G, KC_G}},
+  {.shift_id = HK_W, .keycode = KC_NO, .key_sequence = {KC_K, KC_A}},
 
   /* HK_E */
-  {.shift_id = HK_E, .keycode = KC_HK_LSPACE, .key_sequence = {KC_Y, KC_O}},
-  {.shift_id = HK_E, .keycode = KC_HK_RSPACE, .key_sequence = {KC_D, KC_E}},
-  {.shift_id = HK_E, .keycode = KC_NO, .key_sequence = {KC_T, KC_E}},
+  {.shift_id = HK_E, .keycode = KC_HK_LSFT, .key_sequence = {KC_R, KC_I}},
+  {.shift_id = HK_E, .keycode = KC_HK_RSFT, .key_sequence = {KC_D, KC_A}},
+  {.shift_id = HK_E, .keycode = KC_NO, .key_sequence = {KC_T, KC_A}},
 
   /* HK_R */
-  {.shift_id = HK_R, .keycode = KC_HK_LSPACE, .key_sequence = {KC_LSFT, KC_RO}},
-  {.shift_id = HK_R, .keycode = KC_HK_RSPACE, .key_sequence = {KC_Z, KC_E}},
-  {.shift_id = HK_R, .keycode = KC_NO, .key_sequence = {KC_S, KC_E}},
+  {.shift_id = HK_R, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_Y, KC_A}},
+  {.shift_id = HK_R, .keycode = KC_HK_RSFT, .key_sequence = {KC_G, KC_O}},
+  {.shift_id = HK_R, .keycode = KC_NO, .key_sequence = {KC_K, KC_O}},
 
   /* HK_T */
-  {.shift_id = HK_T, .keycode = KC_HK_RSPACE, .key_sequence = {KC_Z, KC_O}},
-  {.shift_id = HK_T, .keycode = KC_NO, .key_sequence = {KC_S, KC_O}},
+  {.shift_id = HK_T, .keycode = KC_HK_LSFT, .key_sequence = {KC_R, KC_E}},
+  {.shift_id = HK_T, .keycode = KC_HK_RSFT, .key_sequence = {KC_Z, KC_A}},
+  {.shift_id = HK_T, .keycode = KC_NO, .key_sequence = {KC_S, KC_A}},
 
   /* HK_Y */
-  {.shift_id = HK_Y, .keycode = KC_NO, .key_sequence = {KC_SLSH}},
+  {.shift_id = HK_Y, .keycode = KC_HK_LSFT, .key_sequence = {KC_P, KC_A}},
+  {.shift_id = HK_Y, .keycode = KC_HK_RSFT, .key_sequence = {KC_Y, KC_O}},
+  {.shift_id = HK_Y, .keycode = KC_NO, .key_sequence = {KC_R, KC_A}},
 
 /* HK_U */
-  {.shift_id = HK_U, .keycode = KC_HK_LSPACE, .key_sequence = {KC_B, KC_I}},
-  {.shift_id = HK_U, .keycode = KC_HK_RSPACE, .key_sequence = {KC_H, KC_I}},
-  {.shift_id = HK_U, .keycode = KC_NO, .key_sequence = {KC_O}},
+  {.shift_id = HK_U, .keycode = KC_HK_LSFT, .key_sequence = {KC_D, KC_I}},
+  {.shift_id = HK_U, .keycode = KC_HK_RSFT, .key_sequence = {KC_N, KC_I}},
+  {.shift_id = HK_U, .keycode = KC_NO, .key_sequence = {KC_C, KC_H, KC_I}},
 
 /* HK_I */
-  {.shift_id = HK_I, .keycode = KC_HK_LSPACE, .key_sequence = {KC_G, KC_I}},
-  {.shift_id = HK_I, .keycode = KC_HK_RSPACE, .key_sequence = {KC_K, KC_I}},
-  {.shift_id = HK_I, .keycode = KC_NO, .key_sequence = {KC_N, KC_O}},
+  {.shift_id = HK_I, .keycode = KC_HK_LSFT, .key_sequence = {KC_D, KC_I}},
+  {.shift_id = HK_I, .keycode = KC_HK_RSFT, .key_sequence = {KC_N, KC_I}},
+  {.shift_id = HK_I, .keycode = KC_NO, .key_sequence = {KC_K, KC_U}},
 
   
 /* HK_O */
-  {.shift_id = HK_O, .keycode = KC_HK_LSPACE, .key_sequence = {KC_D, KC_U}},
-  {.shift_id = HK_O, .keycode = KC_HK_RSPACE, .key_sequence = {KC_T, KC_U}},
-  {.shift_id = HK_O, .keycode = KC_NO, .key_sequence = {KC_N, KC_I}},
+  {.shift_id = HK_O, .keycode = KC_HK_LSFT, .key_sequence = {KC_G, KC_U}},
+  {.shift_id = HK_O, .keycode = KC_HK_RSFT, .key_sequence = {KC_R, KC_U}},
+  {.shift_id = HK_O, .keycode = KC_NO, .key_sequence = {KC_K, KC_U}},
 
 /* HK_P */
-  {.shift_id = HK_P, .keycode = KC_HK_LSPACE, .key_sequence = {JA_RBRC}},
-  {.shift_id = HK_P, .keycode = KC_HK_RSPACE, .key_sequence = {JA_LBRC}},
-  {.shift_id = HK_P, .keycode = KC_NO, .key_sequence = {JA_LBRC, JA_RBRC}},
+  {.shift_id = HK_P, .keycode = KC_HK_LSFT, .key_sequence = {KC_D, KC_U}},
+  {.shift_id = HK_P, .keycode = KC_HK_RSFT, .key_sequence = {KC_M, KC_A}},
+  {.shift_id = HK_P, .keycode = KC_NO, .key_sequence = {KC_T, KC_U}},
 
 /* HK_AT */
-  {.shift_id = HK_AT, .keycode = KC_HK_RSPACE, .key_sequence = {KC_LSFT, KC_8, KC_LSFT, KC_9}},
+  {.shift_id = HK_AT, .keycode = KC_HK_LSFT, .key_sequence = {JA_RBRC}},
+  {.shift_id = HK_AT, .keycode = KC_HK_RSFT, .key_sequence = {KC_LSFT, KC_8, KC_LSFT, KC_9}},
   {.shift_id = HK_AT, .keycode = KC_NO, .key_sequence = {KC_COMM}},
 
 /* asdfghjkl;: */
 
 /* HK_A */
-  {.shift_id = HK_A, .keycode = KC_HK_LSPACE, .key_sequence = {KC_M, KC_E}},
-  {.shift_id = HK_A, .keycode = KC_HK_RSPACE, .key_sequence = {KC_G, KC_O}},
-  {.shift_id = HK_A, .keycode = KC_NO, .key_sequence = {KC_K, KC_O}},
+  {.shift_id = HK_A, .keycode = KC_HK_LSFT, .key_sequence = {KC_W, KC_O}},
+  {.shift_id = HK_A, .keycode = KC_HK_RSFT, .key_sequence = {KC_V, KC_U}},
+  {.shift_id = HK_A, .keycode = KC_NO, .key_sequence = {KC_U}},
 
 /* HK_S */
-  {.shift_id = HK_S, .keycode = KC_HK_LSPACE, .key_sequence = {KC_Y, KC_A}},
-  {.shift_id = HK_S, .keycode = KC_HK_RSPACE, .key_sequence = {KC_D, KC_A}},
-  {.shift_id = HK_S, .keycode = KC_NO, .key_sequence = {KC_T, KC_A}},
+  {.shift_id = HK_S, .keycode = KC_HK_LSFT, .key_sequence = {KC_A}},
+  {.shift_id = HK_S, .keycode = KC_HK_RSFT, .key_sequence = {KC_J, KC_I}},
+  {.shift_id = HK_S, .keycode = KC_NO, .key_sequence = {KC_S, KC_I}},
 
 /* HK_D */
-  {.shift_id = HK_D, .keycode = KC_HK_LSPACE, .key_sequence = {KC_M, KC_O}},
-  {.shift_id = HK_D, .keycode = KC_HK_RSPACE, .key_sequence = {KC_G, KC_A}},
-  {.shift_id = HK_D, .keycode = KC_NO, .key_sequence = {KC_K, KC_A}},
+  {.shift_id = HK_D, .keycode = KC_HK_LSFT, .key_sequence = {KC_N, KC_A}},
+  {.shift_id = HK_D, .keycode = KC_HK_RSFT, .key_sequence = {KC_D, KC_E}},
+  {.shift_id = HK_D, .keycode = KC_NO, .key_sequence = {KC_T, KC_E}},
 
 /* HK_F */
-  {.shift_id = HK_F, .keycode = KC_HK_LSPACE, .key_sequence = {KC_S, KC_A}},
-  {.shift_id = HK_F, .keycode = KC_HK_RSPACE, .key_sequence = {KC_Z, KC_A}},
-  {.shift_id = HK_F, .keycode = KC_NO, .key_sequence = {KC_R, KC_U}},
+  {.shift_id = HK_F, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_Y, KC_U}},
+  {.shift_id = HK_F, .keycode = KC_HK_RSFT, .key_sequence = {KC_G, KC_E}},
+  {.shift_id = HK_F, .keycode = KC_NO, .key_sequence = {KC_K, KC_E}},
 
 /* HK_G */
-  {.shift_id = HK_G, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_U}},
-  {.shift_id = HK_G, .keycode = KC_HK_RSPACE, .key_sequence = {KC_B, KC_A}},
-  {.shift_id = HK_G, .keycode = KC_NO, .key_sequence = {KC_H, KC_A}},
+  {.shift_id = HK_G, .keycode = KC_HK_LSFT, .key_sequence = {KC_M, KC_O}},
+  {.shift_id = HK_G, .keycode = KC_HK_RSFT, .key_sequence = {KC_Z, KC_E}},
+  {.shift_id = HK_G, .keycode = KC_NO, .key_sequence = {KC_S, KC_E}},
 
 /* HK_H */
-  {.shift_id = HK_H, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_I}},
-  {.shift_id = HK_H, .keycode = KC_HK_RSPACE, .key_sequence = {KC_M, KC_U}},
-  {.shift_id = HK_H, .keycode = KC_NO, .key_sequence = {KC_MINS}},
+  {.shift_id = HK_H, .keycode = KC_HK_LSFT, .key_sequence = {KC_M, KC_I}},
+  {.shift_id = HK_H, .keycode = KC_HK_RSFT, .key_sequence = {KC_B, KC_A}},
+  {.shift_id = HK_H, .keycode = KC_NO, .key_sequence = {KC_H, KC_A}},
 
 /* HK_J */
-  {.shift_id = HK_J, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_A}},
-  {.shift_id = HK_J, .keycode = KC_HK_RSPACE, .key_sequence = {KC_R, KC_E}},
-  {.shift_id = HK_J, .keycode = KC_NO, .key_sequence = {KC_N, KC_N}},
+  {.shift_id = HK_J, .keycode = KC_HK_LSFT, .key_sequence = {KC_O}},
+  {.shift_id = HK_J, .keycode = KC_HK_RSFT, .key_sequence = {KC_D, KC_O}},
+  {.shift_id = HK_J, .keycode = KC_NO, .key_sequence = {KC_T, KC_O}},
 
 /* HK_K */
-  {.shift_id = HK_K, .keycode = KC_HK_LSPACE, .key_sequence = {KC_G, KC_U}},
-  {.shift_id = HK_K, .keycode = KC_HK_RSPACE, .key_sequence = {KC_K, KC_U}},
-  {.shift_id = HK_K, .keycode = KC_NO, .key_sequence = {KC_I}},
+  {.shift_id = HK_K, .keycode = KC_HK_LSFT, .key_sequence = {KC_N, KC_O}},
+  {.shift_id = HK_K, .keycode = KC_HK_RSFT, .key_sequence = {KC_G, KC_I}},
+  {.shift_id = HK_K, .keycode = KC_NO, .key_sequence = {KC_K, KC_I}},
 
 /* HK_L */
-  {.shift_id = HK_L, .keycode = KC_HK_LSPACE, .key_sequence = {KC_Z, KC_I}},
-  {.shift_id = HK_L, .keycode = KC_HK_RSPACE, .key_sequence = {KC_R, KC_I}},
-  {.shift_id = HK_L, .keycode = KC_NO, .key_sequence = {KC_S, KC_I}},
+  {.shift_id = HK_L, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_Y, KC_O}},
+  {.shift_id = HK_L, .keycode = KC_HK_RSFT, .key_sequence = {KC_P, KC_O}},
+  {.shift_id = HK_L, .keycode = KC_NO, .key_sequence = {KC_I}},
 
 /* HK_SCOLON */
-  {.shift_id = HK_SCOLON, .keycode = KC_HK_LSPACE, .key_sequence = {KC_D, KC_O}},
-  {.shift_id = HK_SCOLON, .keycode = KC_HK_RSPACE, .key_sequence = {KC_W, KC_A}},
-  {.shift_id = HK_SCOLON, .keycode = KC_NO, .key_sequence = {KC_T, KC_O}},
+  {.shift_id = HK_SCOLON, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_T, KC_U}},
+  {.shift_id = HK_SCOLON, .keycode = KC_NO, .key_sequence = {KC_N, KC_N}},
 
-/* HK_COLON */
-  {.shift_id = HK_COLON, .keycode = KC_HK_LSPACE, .key_sequence = {KC_P, KC_I}},
-  {.shift_id = HK_COLON, .keycode = KC_HK_RSPACE, .key_sequence = {KC_N, KC_E}},
-  {.shift_id = HK_COLON, .keycode = KC_NO, .key_sequence = {KC_BSPC}},
 
 /* zxcvbnm,./ */
 
 /* HK_Z */
-  {.shift_id = HK_Z, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_Y, KC_U}},
-  {.shift_id = HK_Z, .keycode = KC_HK_RSPACE, .key_sequence = {KC_P, KC_O}},
-  {.shift_id = HK_Z, .keycode = KC_NO, .key_sequence = {KC_Y, KC_U}},
+  {.shift_id = HK_Z, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_U}},
+  {.shift_id = HK_Z, .keycode = KC_NO, .key_sequence = {HK_SLASH}},
 
 /* HK_X */
-  {.shift_id = HK_X, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_Y, KC_A}},
-  {.shift_id = HK_X, .keycode = KC_HK_RSPACE, .key_sequence = {KC_B, KC_O}},
-  {.shift_id = HK_X, .keycode = KC_NO, .key_sequence = {KC_H, KC_O}},
+  {.shift_id = HK_X, .keycode = KC_HK_LSFT, .key_sequence = {KC_EQL}},
+  {.shift_id = HK_X, .keycode = KC_HK_RSFT, .key_sequence = {KC_B, KC_I}},
+  {.shift_id = HK_X, .keycode = KC_NO, .key_sequence = {KC_H, KC_I}},
 
 /* HK_C */
-  {.shift_id = HK_C, .keycode = KC_HK_LSPACE, .key_sequence = {KC_H, KC_U}},
-  {.shift_id = HK_C, .keycode = KC_HK_RSPACE, .key_sequence = {KC_B, KC_U}},
-  {.shift_id = HK_C, .keycode = KC_NO, .key_sequence = {KC_M, KC_A}},
+  {.shift_id = HK_C, .keycode = KC_HK_LSFT, .key_sequence = {KC_R, KC_O}},
+  {.shift_id = HK_C, .keycode = KC_HK_RSFT, .key_sequence = {KC_Z, KC_U}},
+  {.shift_id = HK_C, .keycode = KC_NO, .key_sequence = {KC_S, KC_U}},
 
 /* HK_V */
-  {.shift_id = HK_V, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_Y, KC_O}},
-  {.shift_id = HK_V, .keycode = KC_HK_RSPACE, .key_sequence = {KC_P, KC_U}},
-  {.shift_id = HK_V, .keycode = KC_NO, .key_sequence = {KC_R, KC_O}},
+  {.shift_id = HK_V, .keycode = KC_HK_LSFT, .key_sequence = {KC_Y, KC_A}},
+  {.shift_id = HK_V, .keycode = KC_HK_RSFT, .key_sequence = {KC_B, KC_U}},
+  {.shift_id = HK_V, .keycode = KC_NO, .key_sequence = {KC_H, KC_U}},
 
 /* HK_B */
-  {.shift_id = HK_B, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_O}},
-  {.shift_id = HK_B, .keycode = KC_HK_RSPACE, .key_sequence = {KC_X, KC_W, KC_A}},
-  {.shift_id = HK_B, .keycode = KC_NO, .key_sequence = {KC_LSFT, KC_MINS}},
+  {.shift_id = HK_B, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_I}},
+  {.shift_id = HK_B, .keycode = KC_HK_RSFT, .key_sequence = {KC_B, KC_E}},
+  {.shift_id = HK_B, .keycode = KC_NO, .key_sequence = {KC_E, KC_H}},
 
 /* HK_N */
-  {.shift_id = HK_N, .keycode = KC_HK_LSPACE, .key_sequence = {KC_X, KC_E}},
-  {.shift_id = HK_N, .keycode = KC_HK_RSPACE, .key_sequence = {KC_M, KC_I}},
-  {.shift_id = HK_N, .keycode = KC_NO, .key_sequence = {KC_X, KC_T, KC_U}},
+  {.shift_id = HK_N, .keycode = KC_HK_LSFT, .key_sequence = {KC_N, KC_U}},
+  {.shift_id = HK_N, .keycode = KC_HK_RSFT, .key_sequence = {KC_P, KC_U}},
+  {.shift_id = HK_N, .keycode = KC_NO, .key_sequence = {KC_M, KC_E}},
 
 /* HK_M */
-  {.shift_id = HK_M, .keycode = KC_HK_LSPACE, .key_sequence = {KC_V, KC_U}},
-  {.shift_id = HK_M, .keycode = KC_HK_RSPACE, .key_sequence = {KC_A}},
-  {.shift_id = HK_M, .keycode = KC_NO, .key_sequence = {KC_U}},
+  {.shift_id = HK_M, .keycode = KC_HK_LSFT, .key_sequence = {KC_Y, KC_U}},
+  {.shift_id = HK_M, .keycode = KC_HK_RSFT, .key_sequence = {KC_Z, KC_O}},
+  {.shift_id = HK_M, .keycode = KC_NO, .key_sequence = {KC_S, KC_O}},
 
 /* HK_COMMA */
-  {.shift_id = HK_COMMA, .keycode = KC_HK_LSPACE, .key_sequence = {KC_Z, KC_U}},
-  {.shift_id = HK_COMMA, .keycode = KC_HK_RSPACE, .key_sequence = {KC_E}},
-  {.shift_id = HK_COMMA, .keycode = KC_NO, .key_sequence = {KC_S, KC_U}},
+  {.shift_id = HK_COMMA, .keycode = KC_HK_LSFT, .key_sequence = {KC_M, KC_U}},
+  {.shift_id = HK_COMMA, .keycode = KC_HK_RSFT, .key_sequence = {KC_P, KC_E}},
+  {.shift_id = HK_COMMA, .keycode = KC_NO, .key_sequence = {KC_N, KC_E}},
 
 /* HK_DOT */
-  {.shift_id = HK_DOT, .keycode = KC_HK_LSPACE, .key_sequence = {KC_D, KC_I}},
-  {.shift_id = HK_DOT, .keycode = KC_HK_RSPACE, .key_sequence = {KC_T, KC_I}},
-  {.shift_id = HK_DOT, .keycode = KC_NO, .key_sequence = {KC_R, KC_A}},
+  {.shift_id = HK_DOT, .keycode = KC_HK_LSFT, .key_sequence = {KC_W, KC_A}},
+  {.shift_id = HK_DOT, .keycode = KC_HK_RSFT, .key_sequence = {KC_B, KC_O}},
+  {.shift_id = HK_DOT, .keycode = KC_NO, .key_sequence = {KC_H, KC_O}},
 
 /* HK_SLASH */
-  {.shift_id = HK_SLASH, .keycode = KC_HK_LSPACE, .key_sequence = {KC_B, KC_E}},
-  {.shift_id = HK_SLASH, .keycode = KC_HK_RSPACE, .key_sequence = {KC_N, KC_U}},
-  {.shift_id = HK_SLASH, .keycode = KC_NO, .key_sequence = {KC_H, KC_E}},
-
-/* LSPACE */
-  {.shift_id = HK_LSPACE, .keycode = KC_Q, .key_sequence = {KC_P, KC_E}},
-  {.shift_id = HK_LSPACE, .keycode = KC_W, .key_sequence = {KC_K, KC_E}},
-  {.shift_id = HK_LSPACE, .keycode = KC_E, .key_sequence = {KC_Y, KC_O}},
-  {.shift_id = HK_LSPACE, .keycode = KC_R, .key_sequence = {KC_LSFT, KC_RO}},
-  {.shift_id = HK_LSPACE, .keycode = KC_U, .key_sequence = {KC_B, KC_I}},
-  {.shift_id = HK_LSPACE, .keycode = KC_I, .key_sequence = {KC_G, KC_I}},
-  {.shift_id = HK_LSPACE, .keycode = KC_O, .key_sequence = {KC_D, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_P, .key_sequence = {JA_RBRC}},
-  {.shift_id = HK_LSPACE, .keycode = KC_A, .key_sequence = {KC_M, KC_E}},
-  {.shift_id = HK_LSPACE, .keycode = KC_S, .key_sequence = {KC_Y, KC_A}},
-  {.shift_id = HK_LSPACE, .keycode = KC_D, .key_sequence = {KC_M, KC_O}},
-  {.shift_id = HK_LSPACE, .keycode = KC_F, .key_sequence = {KC_S, KC_A}},
-  {.shift_id = HK_LSPACE, .keycode = KC_G, .key_sequence = {KC_X, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_H, .key_sequence = {KC_X, KC_I}},
-  {.shift_id = HK_LSPACE, .keycode = KC_J, .key_sequence = {KC_X, KC_A}},
-  {.shift_id = HK_LSPACE, .keycode = KC_K, .key_sequence = {KC_G, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_L, .key_sequence = {KC_Z, KC_I}},
-  {.shift_id = HK_LSPACE, .keycode = KC_SCLN,  .key_sequence = {KC_D, KC_O}},
-  {.shift_id = HK_LSPACE, .keycode = JA_CLN,  .key_sequence = {KC_P, KC_I}},
-  {.shift_id = HK_LSPACE, .keycode = KC_Z, .key_sequence = {KC_X, KC_Y, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_X, .key_sequence = {KC_X, KC_Y, KC_A}},
-  {.shift_id = HK_LSPACE, .keycode = KC_C, .key_sequence = {KC_H, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_V, .key_sequence = {KC_X, KC_Y, KC_O}},
-  {.shift_id = HK_LSPACE, .keycode = KC_B, .key_sequence = {KC_X, KC_O}},
-  {.shift_id = HK_LSPACE, .keycode = KC_N, .key_sequence = {KC_X, KC_E}},
-  {.shift_id = HK_LSPACE, .keycode = KC_M, .key_sequence = {KC_V, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_COMM, .key_sequence = {KC_Z, KC_U}},
-  {.shift_id = HK_LSPACE, .keycode = KC_DOT, .key_sequence = {KC_D, KC_I}},
-  {.shift_id = HK_LSPACE, .keycode = KC_SLSH, .key_sequence = {KC_B, KC_E}},
-
-  /* RSPACE */
-  {.shift_id = HK_RSPACE, .keycode = KC_Q,  .key_sequence = {KC_P, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_W,  .key_sequence = {KC_G, KC_E}},
-  {.shift_id = HK_RSPACE, .keycode = KC_E,  .key_sequence = {KC_D, KC_E}},
-  {.shift_id = HK_RSPACE, .keycode = KC_R,  .key_sequence = {KC_Z, KC_E}},
-  {.shift_id = HK_RSPACE, .keycode = KC_T,  .key_sequence = {KC_Z, KC_O}},
-  {.shift_id = HK_RSPACE, .keycode = KC_U,  .key_sequence = {KC_H, KC_I}},
-  {.shift_id = HK_RSPACE, .keycode = KC_I,  .key_sequence = {KC_K, KC_I}},
-  {.shift_id = HK_RSPACE, .keycode = KC_O,  .key_sequence = {KC_T, KC_U}},
-  {.shift_id = HK_RSPACE, .keycode = KC_P,  .key_sequence = {JA_LBRC}},
-  {.shift_id = HK_RSPACE, .keycode = JA_AT, .key_sequence = {KC_LSFT, KC_8, KC_LSFT, KC_9}},
-  {.shift_id = HK_RSPACE, .keycode = KC_A,  .key_sequence = {KC_G, KC_O}},
-  {.shift_id = HK_RSPACE, .keycode = KC_S,  .key_sequence = {KC_D, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_D,  .key_sequence = {KC_G, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_F,  .key_sequence = {KC_Z, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_G,  .key_sequence = {KC_B, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_H,  .key_sequence = {KC_M, KC_U}},
-  {.shift_id = HK_RSPACE, .keycode = KC_J,  .key_sequence = {KC_R, KC_E}},
-  {.shift_id = HK_RSPACE, .keycode = KC_K,  .key_sequence = {KC_K, KC_U}},
-  {.shift_id = HK_RSPACE, .keycode = KC_L,  .key_sequence = {KC_R, KC_I}},
-  {.shift_id = HK_RSPACE, .keycode = KC_SCLN,  .key_sequence = {KC_W, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = JA_CLN,  .key_sequence = {KC_N, KC_E}},
-  {.shift_id = HK_RSPACE, .keycode = KC_Z,  .key_sequence = {KC_P, KC_O}},
-  {.shift_id = HK_RSPACE, .keycode = KC_X,  .key_sequence = {KC_B, KC_O}},
-  {.shift_id = HK_RSPACE, .keycode = KC_C,  .key_sequence = {KC_B, KC_U}},
-  {.shift_id = HK_RSPACE, .keycode = KC_V,  .key_sequence = {KC_P, KC_U}},
-  {.shift_id = HK_RSPACE, .keycode = KC_B,  .key_sequence = {KC_X, KC_W, KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_N,  .key_sequence = {KC_M, KC_I}},
-  {.shift_id = HK_RSPACE, .keycode = KC_M,  .key_sequence = {KC_A}},
-  {.shift_id = HK_RSPACE, .keycode = KC_COMM,  .key_sequence = {KC_E}},
-  {.shift_id = HK_RSPACE, .keycode = KC_DOT,  .key_sequence = {KC_T, KC_I}},
-  {.shift_id = HK_RSPACE, .keycode = KC_SLSH,  .key_sequence = {KC_N, KC_U}},
+  {.shift_id = HK_SLASH, .keycode = KC_HK_LSFT, .key_sequence = {KC_X, KC_O}},
+  {.shift_id = HK_SLASH, .keycode = KC_NO, .key_sequence = {HK_SLASH}},
 };
 
 /* Initialize variables for japanese implement */
@@ -340,8 +274,8 @@ uint16_t der_conv_kc_to_shifter(uint16_t keycode) {
     case KC_COMM: return HK_COMMA; break;
     case KC_DOT: return HK_DOT; break;
     case KC_SLSH: return HK_SLASH; break;
-    case KC_HK_LSPACE: return HK_LSPACE; break;
-    case KC_HK_RSPACE: return HK_RSPACE; break;
+    case KC_HK_LSFT: return HK_LSFT; break;
+    case KC_HK_RSFT: return HK_RSFT; break;
   }
 
   return HK_NOSHIFT;
@@ -388,8 +322,8 @@ void der_send_key_sequence(uint16_t shifter, uint16_t keycode) {
 
 bool der_is_custom_keycode(uint16_t keycode) {
   switch (keycode) {
-    case KC_HK_RSPACE:
-    case KC_HK_LSPACE:
+    case KC_HK_RSFT:
+    case KC_HK_LSFT:
       return false;
     default:
       break;
